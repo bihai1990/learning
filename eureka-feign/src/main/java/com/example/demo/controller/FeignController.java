@@ -14,7 +14,7 @@ public class FeignController {
     @Autowired
     private FeignService feignService;
 
-    @RequestMapping(value = "/feign-hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/hi", method = RequestMethod.GET)
     public String hi(@RequestParam(value = "name", defaultValue = "feign-test") String name) {
         return feignService.feignMethod(name);
     }

@@ -34,8 +34,8 @@ public class RibbonApplication {
         return new RestTemplate();
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/hi", method = RequestMethod.GET)
     public String test() {
-        return testService.testLoadBalance("aaa");
+        return testService.testLoadBalance("ribbon");
     }
 }
