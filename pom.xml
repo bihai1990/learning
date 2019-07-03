@@ -9,6 +9,8 @@
     <packaging>pom</packaging>
 
 	<modules>
+        <module>config-server</module>
+        <module>config-client</module>
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>eureka-ribbon</module>
