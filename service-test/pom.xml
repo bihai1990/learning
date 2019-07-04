@@ -9,10 +9,10 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>config-client</artifactId>
+	<artifactId>service-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>config-client</name>
-	<description>config-client project for Spring Boot</description>
+	<name>service-test</name>
+	<description>service-test project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -39,12 +39,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 	</dependencies>
 

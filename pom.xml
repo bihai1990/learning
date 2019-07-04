@@ -16,5 +16,7 @@
         <module>eureka-ribbon</module>
         <module>eureka-feign</module>
         <module>eureka-zuul</module>
+        <module>service-hi</module>
+        <module>service-test</module>
 	</modules>
 </project>
