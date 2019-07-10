@@ -18,5 +18,6 @@
         <module>eureka-zuul</module>
         <module>service-hi</module>
         <module>service-test</module>
+        <module>server-gateway</module>
 	</modules>
 </project>
