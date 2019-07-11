@@ -21,23 +21,23 @@ public class GatewayApplication {
         SpringApplication.run(GatewayApplication.class, args);
     }
 
-    @Bean
-    public RouteLocator getRouteLocator(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
-        return builder.routes().
-                route(predicateSpec -> predicateSpec
-                        .path("/get")
-                        .filters(gatewayFilterSpec -> gatewayFilterSpec
-                                .addRequestHeader("hello", "word"))
-                        .uri(uriConfiguration.getHttpBinUri()))
-                .route(predicateSpec -> predicateSpec
-                        .host("*.hystrix.com")
-                        .filters(gatewayFilterSpec -> gatewayFilterSpec
-                                .hystrix(config -> config
-                                        .setName("test")
-                                        .setFallbackUri("forward:/fallback")))
-                        .uri(uriConfiguration.getHttpBinUri()))
-                .build();
-    }
+//    @Bean
+//    public RouteLocator getRouteLocator(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
+//        return builder.routes().
+//                route(predicateSpec -> predicateSpec
+//                        .path("/get")
+//                        .filters(gatewayFilterSpec -> gatewayFilterSpec
+//                                .addRequestHeader("hello", "word"))
+//                        .uri(uriConfiguration.getHttpBinUri()))
+//                .route(predicateSpec -> predicateSpec
+//                        .host("*.hystrix.com")
+//                        .filters(gatewayFilterSpec -> gatewayFilterSpec
+//                                .hystrix(config -> config
+//                                        .setName("test")
+//                                        .setFallbackUri("forward:/fallback")))
+//                        .uri(uriConfiguration.getHttpBinUri()))
+//                .build();
+//    }
 
     @RequestMapping(value = "fallback")
     Mono<String> fallback() {
