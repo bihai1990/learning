@@ -1,0 +1,33 @@
+server:
+  port: 8773
+
+ser:
+  httpBinUri: http://httpbin.org:80
+
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+      - id: requestratelimiter_route
+        uri: http://example.org
+        predicates:
+        - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+        filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter:
+              replenishRate: 1
+              burstCapacity: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
